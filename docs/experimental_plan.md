@@ -7,7 +7,7 @@ Source: arXiv 2608.00492 (idea: Bayesian reflex as predictive coding) and arXiv 
 | E1 | Scalar belief, accuracy + SBC calibration | analytic Gaussian posterior | foundation validated (scalar Gaussian only; 32/32 checks) |
 | E2a | Sequential = batch, scalar Gaussian (Thm 2.1), T=100 and stress T=1e5 | batch posterior in longdouble | foundation validated (scalar Gaussian only) |
 | E2b | Sequential = batch for GP (rank-one update), with E4 | exact batch GP | todo |
-| E3 | Precision-weighted prediction error z_t ~ N(0,1) | exact predictive | todo |
+| E3 | Precision-weighted prediction error z_t ~ N(0,1) | exact predictive | standardization validated (scalar Gaussian only; does not show the PC layer drives learning) |
 | E4 | Function space: exact GP vs PC-FSVI | exact GP | todo |
 | E4b | Look-up table principle (paper sec 5-6) | exact GP | todo |
 | E5 | Nonstationarity: A scalar drift, B functional drift | Kalman filter | todo |
@@ -27,6 +27,8 @@ Source: arXiv 2608.00492 (idea: Bayesian reflex as predictive coding) and arXiv 
 - E3: z uses the one-step-ahead predictive, var = sigma_{t-1}^2 + sigma_y^2, computed before the update.
 - E5: tracking vs retention controlled by one forgetting factor lambda (VCL, paper 9.2).
 - E6-A uses argmax of variance; for a GP with constant noise, A and B coincide for single queries.
+
+- E3: independent z_t under the correct model; negative controls = wrong sigma_y and stale (post-update) variance; unknown-variance variant gives Student-t(2a_{t-1}).
 
 ## Open decisions
 1. Does the predictive-coding layer only report errors (current), or drive the update as in PC-FSVI?
