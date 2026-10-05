@@ -18,8 +18,9 @@ The paper reinterprets the "Bayesian reflex" (online Bayesian learning) as a com
 
 | Stage | Experiment | Status |
 |---|---|---|
-| E1 | Scalar belief + SBC calibration | done |
-| E2-E8 | sequential equivalence, prediction error, function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
+| E1 | Scalar Gaussian inference module + SBC calibration | validated (foundation only) |
+| E2a | Sequential updating vs batch oracle (scalar Gaussian) | validated (foundation only) |
+| E2b-E8 | GP sequential equivalence, prediction error, function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
 
 ### Layout
 
@@ -37,6 +38,7 @@ results/               figures + json produced by experiments
 pip install -r requirements.txt
 pytest
 python experiments/e1_scalar_belief.py
+python experiments/e2_sequential_equivalence.py
 ```
 
 ### Related papers

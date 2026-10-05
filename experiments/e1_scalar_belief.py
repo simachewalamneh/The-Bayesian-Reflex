@@ -107,7 +107,7 @@ def main():
     print(f"{'check':34s}{'value':>10s}  criterion")
     for n, v, c, p in rows:
         print(f"{n:34s}{v:10.4f}  {c:24s}{'PASS' if p else 'FAIL'}")
-    print("\nE1 OVERALL:", "PASS" if all(r[3] for r in rows) else "FAIL")
+    print("\nE1 (scalar Gaussian inference module, foundation only):", "PASS" if all(r[3] for r in rows) else "FAIL")
 
     PM = prior_mismatch()
     for mu0, d in PM.items():
@@ -153,7 +153,7 @@ def main():
     ax.set_title("E1 secondary: prior mismatch"); ax.legend(fontsize=8)
     fig.tight_layout(); fig.savefig(OUT / "e1_prior_mismatch.png", dpi=140); plt.close(fig)
 
-    res = dict(config={k: v for k, v in C.items() if k != "seeds"}, seeds=C["seeds"],
+    res = dict(scope="scalar Gaussian inference module under the specified generative model; does not test the reflex loop", config={k: v for k, v in C.items() if k != "seeds"}, seeds=C["seeds"],
                checks=[dict(name=n, value=float(v), criterion=c, passed=bool(p)) for n, v, c, p in rows],
                overall_pass=bool(all(r[3] for r in rows)),
                prior_mismatch={str(k): dict(t_bias_lt_0p1=d["t_bias_lt_0p1"],

@@ -1,0 +1,64 @@
+{
+  "scope": "scalar Gaussian sequential updating vs batch oracle (longdouble)",
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "T=100 max|dmu|",
+      "value": 1.697340185069507e-14,
+      "criterion": "<1e-6",
+      "passed": true
+    },
+    {
+      "name": "T=100 max|dvar|",
+      "value": 3.183217578417441e-16,
+      "criterion": "<1e-6",
+      "passed": true
+    },
+    {
+      "name": "T=100 max KL",
+      "value": 7.939925815201426e-26,
+      "criterion": "<1e-12",
+      "passed": true
+    },
+    {
+      "name": "permutation |dmu| (final)",
+      "value": 4.440892098500626e-15,
+      "criterion": "<1e-10",
+      "passed": true
+    },
+    {
+      "name": "CONTROL mean|dmu| (dropped data)",
+      "value": 0.028588054255786966,
+      "criterion": ">1e-3 (must differ)",
+      "passed": true
+    },
+    {
+      "name": "T=1e5 finite values",
+      "value": 1.0,
+      "criterion": "True",
+      "passed": true
+    },
+    {
+      "name": "T=1e5 max|dmu|",
+      "value": 9.407895903285057e-12,
+      "criterion": "<1e-6",
+      "passed": true
+    },
+    {
+      "name": "T=1e5 max rel dvar",
+      "value": 2.491720930086906e-12,
+      "criterion": "<1e-6",
+      "passed": true
+    },
+    {
+      "name": "T=1e5 max KL",
+      "value": 1.5727999503610552e-17,
+      "criterion": "<1e-12",
+      "passed": true
+    }
+  ],
+  "diagnostics": {
+    "max_rel_dvar_T100": 2.8963765780196544e-15,
+    "dmu_growth_loglog_slope_T1e5": 1.0592533339324424
+  }
+}
