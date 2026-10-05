@@ -13,3 +13,33 @@ The paper reinterprets the "Bayesian reflex" (online Bayesian learning) as a com
 ### Reference
 
 - Paper: https://arxiv.org/abs/2608.00492
+
+### Status
+
+| Stage | Experiment | Status |
+|---|---|---|
+| E1 | Scalar belief + SBC calibration | done |
+| E2-E8 | sequential equivalence, prediction error, function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
+
+### Layout
+
+```
+src/bayesian_reflex/   GenerativeModel, ScalarGaussianBelief, PredictiveCodingLayer, BayesianReflex
+experiments/           one script per stage (e1 implemented, e2..e8 stubs with protocol)
+tests/                 unit tests
+docs/                  experimental plan, decisions
+results/               figures + json produced by experiments
+```
+
+### Quick start
+
+```bash
+pip install -r requirements.txt
+pytest
+python experiments/e1_scalar_belief.py
+```
+
+### Related papers
+
+- Original chapter: https://arxiv.org/abs/2605.02825
+
