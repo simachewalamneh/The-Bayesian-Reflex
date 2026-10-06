@@ -1,0 +1,266 @@
+{
+  "scope": "functional drift, PC-FSVI stand-in vs exact grid Kalman oracle; B2/B3 are misspecified trade-off studies; real PC-FSVI not yet used",
+  "overall_pass": false,
+  "checks": [
+    {
+      "name": "B1 oracle cov95 t=10",
+      "value": 0.9504975609756098,
+      "criterion": "|v-0.95|<0.0092",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle cov95 t=50",
+      "value": 0.9502536585365854,
+      "criterion": "|v-0.95|<0.0092",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle cov95 t=100",
+      "value": 0.9480829268292683,
+      "criterion": "|v-0.95|<0.0092",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle cov95 t=200",
+      "value": 0.9500780487804878,
+      "criterion": "|v-0.95|<0.0092",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle innovation mean",
+      "value": 0.0015233788081076532,
+      "criterion": "|v|<0.0030",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle innovation var",
+      "value": 1.0033834499260708,
+      "criterion": "|v-1|<0.0042",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 oracle innovation lag-1 autocorr",
+      "value": -0.0012352289565500745,
+      "criterion": "|v|<0.0030",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 stand-in RMSE(mu - oracle) t=50",
+      "value": 4.217601239664378e-06,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 stand-in relative sd RMSE t=50",
+      "value": 7.986816508134082e-06,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 stand-in RMSE(mu - oracle) t=200",
+      "value": 8.9332022085324e-06,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 stand-in relative sd RMSE t=200",
+      "value": 8.700089968799009e-06,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL B1 static cov95(200)",
+      "value": 0.16025365853658535,
+      "criterion": "<0.90 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL B1 eta_x0.2 |cov95(200)-0.95|",
+      "value": 0.5154585365853659,
+      "criterion": ">0.03 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL B1 eta_x5 |cov95(200)-0.95|",
+      "value": 0.047926829268292725,
+      "criterion": ">0.03 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL B1 stand-in M=3 relative sd RMSE",
+      "value": 2.994075724002171,
+      "criterion": ">0.10 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B1 PCFSVI class == vectorised stand-in (max|dm|)",
+      "value": 7.040021898774285e-10,
+      "criterion": "<1e-6",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B2 oracle seta=0.1 median recovery (steps)",
+      "value": 12.0,
+      "criterion": "<=80",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B2 oracle seta=0.1 fraction recovered <=100",
+      "value": 1.0,
+      "criterion": ">=0.90",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL B2 static fraction recovered",
+      "value": 0.0,
+      "criterion": "<0.10 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B3 static tracking RMSE / oracle(0.1) tracking RMSE",
+      "value": 2.872537004708842,
+      "criterion": ">2",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B3 oracle(0.1) retention ratio RMSE(200)/RMSE(99)",
+      "value": 1.5355925983575192,
+      "criterion": "<1.5",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "B2 stand-in lam_0.98 median recovery [info]",
+      "value": Infinity,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B2 stand-in lam_0.95 median recovery [info]",
+      "value": 49.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B2 stand-in lam_0.9 median recovery [info]",
+      "value": 31.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    }
+  ],
+  "tradeoff": {
+    "eta_0 (static)": {
+      "recov_med": Infinity,
+      "recov_frac": 0.0,
+      "b2_rmse200": 0.5079851512288507,
+      "b3_trk200": 0.34298227568112155,
+      "b3_ret99": 0.06156857230081373,
+      "b3_ret200": 0.06248459183724609,
+      "ratio": 1.0148780376448692
+    },
+    "eta_0.02": {
+      "recov_med": 60.0,
+      "recov_frac": 0.986,
+      "b2_rmse200": 0.07714998457885211,
+      "b3_trk200": 0.06459989175552375,
+      "b3_ret99": 0.0766918566387645,
+      "b3_ret200": 0.1048791126286424,
+      "ratio": 1.3675391003069082
+    },
+    "eta_0.05": {
+      "recov_med": 23.0,
+      "recov_frac": 1.0,
+      "b2_rmse200": 0.10249903058999377,
+      "b3_trk200": 0.08772172336955919,
+      "b3_ret99": 0.10352756735124029,
+      "b3_ret200": 0.16523137068863256,
+      "ratio": 1.5960132640618165
+    },
+    "eta_0.1": {
+      "recov_med": 12.0,
+      "recov_frac": 1.0,
+      "b2_rmse200": 0.1365944323120055,
+      "b3_trk200": 0.11940047251571818,
+      "b3_ret99": 0.1327977527765883,
+      "b3_ret200": 0.2039232462422407,
+      "ratio": 1.5355925983575192
+    },
+    "eta_0.2": {
+      "recov_med": 8.0,
+      "recov_frac": 1.0,
+      "b2_rmse200": 0.1759816267838343,
+      "b3_trk200": 0.1584390561608924,
+      "b3_ret99": 0.16349339461912532,
+      "b3_ret200": 0.26617796454408715,
+      "ratio": 1.6280655568023168
+    },
+    "lam_1.0": {
+      "recov_med": Infinity,
+      "recov_frac": 0.0,
+      "b2_rmse200": 0.507984249972633,
+      "b3_trk200": 0.3429815351077999,
+      "b3_ret99": 0.061568414984108526,
+      "b3_ret200": 0.062485110472652275,
+      "ratio": 1.0148890545384408
+    },
+    "lam_0.99": {
+      "recov_med": Infinity,
+      "recov_frac": 0.0,
+      "b2_rmse200": 0.2930825555666804,
+      "b3_trk200": 0.17217446709547315,
+      "b3_ret99": 0.06655262011063451,
+      "b3_ret200": 0.0699863980241731,
+      "ratio": 1.0515949320677445
+    },
+    "lam_0.98": {
+      "recov_med": Infinity,
+      "recov_frac": 0.002,
+      "b2_rmse200": 0.1538420426122945,
+      "b3_trk200": 0.08580641939918457,
+      "b3_ret99": 0.0769759028794701,
+      "b3_ret200": 0.08315504377533227,
+      "ratio": 1.0802737046883042
+    },
+    "lam_0.95": {
+      "recov_med": 49.0,
+      "recov_frac": 0.998,
+      "b2_rmse200": 0.11550605688467189,
+      "b3_trk200": 0.08120557554848816,
+      "b3_ret99": 0.12746978128270786,
+      "b3_ret200": 0.19915748185872184,
+      "ratio": 1.5623897668500895
+    },
+    "lam_0.9": {
+      "recov_med": 31.0,
+      "recov_frac": 1.0,
+      "b2_rmse200": 0.20159797112774538,
+      "b3_trk200": 0.13742143113992775,
+      "b3_ret99": 0.24845051068492108,
+      "b3_ret200": 10.450670957363526,
+      "ratio": 42.06339092865385
+    }
+  }
+}

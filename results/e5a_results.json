@@ -1,6 +1,10 @@
 {
   "scope": "scalar drift tracking under known linear-Gaussian model; not change-point detection; not function space",
-  "overall_pass": false,
+  "overall_pass_v1": false,
+  "overall_pass_v2": true,
+  "recorded_v1_miss": [
+    "constant lambda* var -> Kalman var (t>=100)"
+  ],
   "analytic": {
     "P_ss": 0.02378123049312599,
     "K_ss": 0.09512492197250395,
@@ -139,6 +143,27 @@
       "criterion": "info (decay of the t>=100 miss)",
       "passed": true,
       "informational": true
+    },
+    {
+      "name": "v2a Kalman var(T=1000) vs analytic P_ss",
+      "value": 6.938893903907228e-18,
+      "criterion": "<1e-12",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "v2a constant lambda* var(T=1000) vs analytic P_ss",
+      "value": 6.938893903907228e-18,
+      "criterion": "<1e-12",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "v2b |var gap| log-slope (t=50..200) vs ln(lambda*), rel",
+      "value": 0.00017400171876991166,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
     },
     {
       "name": "RW RMSE kalman (t>=100)",

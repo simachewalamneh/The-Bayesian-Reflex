@@ -67,8 +67,10 @@ def batch_gp(X, y, xs, sf=1.0, ell=1.0, sy=0.2):
 
 
 class PCFSVI(_Marginal, GenerativeModel):
-    def __init__(self, M=20, domain=(-3.0, 3.0), sf=1.0, ell=1.0, sy=0.2, n_iters=30, jitter=1e-6):
+    def __init__(self, M=20, domain=(-3.0, 3.0), sf=1.0, ell=1.0, sy=0.2, n_iters=30, jitter=1e-6,
+                 sigma_eta=0.0, forgetting=None):
         self.sf, self.ell, self.sy, self.n_iters, self.M = sf, ell, sy, n_iters, M
+        self.sigma_eta, self.forgetting = sigma_eta, forgetting   # E5-B drift: S += sigma_eta^2 I, and/or S /= lambda
         self.Z = np.linspace(*domain, M)
         self.Lz = cholesky(rbf(self.Z, self.Z, sf, ell) + jitter * np.eye(M), lower=True)
         self.m, self.S = np.zeros(M), np.eye(M)
@@ -78,6 +80,10 @@ class PCFSVI(_Marginal, GenerativeModel):
         return solve_triangular(self.Lz, rbf(self.Z, np.atleast_1d(x), self.sf, self.ell), lower=True)
 
     def update(self, observation, context=None):
+        if self.sigma_eta:                              # time update (functional drift, whitened coordinates)
+            self.S = self.S + self.sigma_eta ** 2 * np.eye(self.M)
+        if self.forgetting:
+            self.S = self.S / self.forgetting
         phi = self.phi(float(context))[:, 0]
         s2, Sphi = self.sy ** 2, self.S @ phi
         c = phi @ Sphi / s2
