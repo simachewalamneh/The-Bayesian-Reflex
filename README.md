@@ -23,7 +23,8 @@ The paper reinterprets the "Bayesian reflex" (online Bayesian learning) as a com
 | E3 | One-step-ahead prediction error standardization (scalar Gaussian) | validated (foundation only) |
 | E4 / E2b | Function space: exact GP oracle vs PC-FSVI **stand-in** (rank-one GP == batch GP) | validated for the stand-in only; real PC-FSVI not yet tested |
 | E4-real | Same task with your real FSVI + pc_infer (adapter; utils.py shimmed) | validated in this setting (Gaussian, streaming); see docs |
-| E4b-E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
+| E5-A | Scalar drift tracking vs Kalman oracle (known linear-Gaussian model) | 25/26 pre-registered checks pass; 1 marginal tolerance miss (see docs) |
+| E4b, E5-B, E6-E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
 
 ### Layout
 
@@ -46,6 +47,7 @@ python experiments/e2_sequential_equivalence.py
 python experiments/e3_prediction_error.py
 python experiments/e4_function_space.py   # ~1-2 min
 python experiments/e4_real_pcfsvi.py      # ~3-5 min
+python experiments/e5a_scalar_drift.py
 ```
 
 ### Related papers

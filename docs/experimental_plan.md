@@ -10,7 +10,8 @@ Source: arXiv 2608.00492 (idea: Bayesian reflex as predictive coding) and arXiv 
 | E3 | Precision-weighted prediction error z_t ~ N(0,1) | exact predictive | standardization validated (scalar Gaussian only; does not show the PC layer drives learning) |
 | E4 | Function space: exact GP vs PC-FSVI | exact GP | stand-in validated; real FSVI+pc_infer also validated in this setting (E4-real) |
 | E4b | Look-up table principle (paper sec 5-6) | exact GP | todo |
-| E5 | Nonstationarity: A scalar drift, B functional drift | Kalman filter | todo |
+| E5-A | Scalar drift: tracking, uncertainty floor, shift recovery | Kalman filter | 25/26 pre-registered checks pass; one marginal miss (constant-lambda* variance convergence 1.06e-6 vs 1e-6, t>=100); tracking validated under a known model only |
+| E5-B | Functional drift (real PC-FSVI, lambda/beta) | exact GP with forgetting | todo |
 | E6 | Uncertainty-driven action: A variance, B info gain, C Thompson | random baseline / known regret | todo |
 | E7 | Full reflex loop + ablations | composition of validated parts | todo |
 | E8a | Ellipsoidal sampler standalone | exact samplers | todo |
@@ -32,6 +33,7 @@ Source: arXiv 2608.00492 (idea: Bayesian reflex as predictive coding) and arXiv 
 - E4: hyperparameters fixed and shared (sf=1, ell=1, sigma_y=0.2); the PC-FSVI used is a minimal stand-in (inducing-point q(u), PC settling), whose fixed point is the conjugate update, so near-exact agreement with the GP is expected by construction. M<=5 inducing points breaks it (control).
 - E4 latency: PC-FSVI is O(M^2), constant in t; exact rank-one GP is O(t^2), so the advantage over the exact GP appears only at large t (crossover ~ a few hundred steps in our run); vs batch refit O(t^3) it is immediate.
 - E4-real: your code via adapter, same criteria. Streaming one point at a time is ~10x less accurate than 50-point chunks (1e-4 vs 7e-6 RMSE) because jitter accumulates per chained update. Latency 5.7 ms/update (constant) is dominated by 150 iterations that each re-invert M x M matrices; with lr=1.0 the update is exact Newton, and n_iters=1 gave identical accuracy at 0.10 ms in a side check (Gaussian likelihood only).
+- E5-A: forgetting factor lambda and process noise are the same filter (var_pred = var/lambda = var + sigma_eta^2 when lambda_t = var/(var+sigma_eta^2)); a constant lambda* reproduces the Kalman variance only asymptotically (the pre-registered t>=100 tolerance was too tight; diff is 7e-9 by t>=150, a post-hoc diagnostic). Controls: static belief and mismatched sigma_eta (x0.2, x5) lose calibration. An EMA tuned to the steady-state Kalman gain ties the Kalman filter in RMSE and recovery; the Kalman advantage is calibrated uncertainty, the transient, and a principled gain. Untuned EMAs (alpha 0.02 / 0.5) are worse (RMSE 0.259 / 0.290 vs 0.154). The 1.96-sigma recovery metric can be gamed by inflated uncertainty (sigma_eta x5 'recovers' in 2 steps), so also report the fixed-band version.
 
 ## Open decisions
 1. Does the predictive-coding layer only report errors (current), or drive the update as in PC-FSVI?

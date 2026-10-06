@@ -1,0 +1,340 @@
+{
+  "scope": "scalar drift tracking under known linear-Gaussian model; not change-point detection; not function space",
+  "overall_pass": false,
+  "analytic": {
+    "P_ss": 0.02378123049312599,
+    "K_ss": 0.09512492197250395,
+    "lambda_star": 0.9048750780274961
+  },
+  "checks": [
+    {
+      "name": "RW kalman cov95 t=1",
+      "value": 0.9496,
+      "criterion": "|v-0.95|<0.0065",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman innovation KS p t=1",
+      "value": 0.3293843871302521,
+      "criterion": ">0.001",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman cov95 t=10",
+      "value": 0.9479,
+      "criterion": "|v-0.95|<0.0065",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman innovation KS p t=10",
+      "value": 0.6871142816924773,
+      "criterion": ">0.001",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman cov95 t=50",
+      "value": 0.9509,
+      "criterion": "|v-0.95|<0.0065",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman innovation KS p t=50",
+      "value": 0.40365193010377554,
+      "criterion": ">0.001",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman cov95 t=100",
+      "value": 0.9498,
+      "criterion": "|v-0.95|<0.0065",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman innovation KS p t=100",
+      "value": 0.32488457892347555,
+      "criterion": ">0.001",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman cov95 t=200",
+      "value": 0.9504,
+      "criterion": "|v-0.95|<0.0065",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW kalman innovation KS p t=200",
+      "value": 0.7318728895919109,
+      "criterion": ">0.001",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW innovation mean z",
+      "value": -9.77811510969318e-05,
+      "criterion": "|v|<0.0021",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW innovation var z",
+      "value": 0.9995138762328613,
+      "criterion": "|v-1|<0.0030",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW innovation lag-1 autocorr",
+      "value": -0.00038355076997531454,
+      "criterion": "|v|<0.0021",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "Kalman var(T) vs analytic steady state (rel)",
+      "value": 2.9178027208949215e-16,
+      "criterion": "<1e-6",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "floor: Kalman var / static var at T",
+      "value": 19.04876562499393,
+      "criterion": ">10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "static drift model == E1 belief (max diff)",
+      "value": 4.884981308350689e-15,
+      "criterion": "<1e-12",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "matched lambda == Kalman (max diff)",
+      "value": 0.0,
+      "criterion": "<1e-10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "constant lambda* var -> Kalman var (t>=100)",
+      "value": 1.05833437052949e-06,
+      "criterion": "<1e-6",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "POST-HOC lambda* var diff (t>=150) [info]",
+      "value": 7.146203743341184e-09,
+      "criterion": "info (decay of the t>=100 miss)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "RW RMSE kalman (t>=100)",
+      "value": 0.1539682245463223,
+      "criterion": "<= min(EMA,window)+0.002 = 0.1560",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "RW RMSE ema (t>=100) [info]",
+      "value": 0.15396823210120333,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "RW RMSE ema_slow (t>=100) [info]",
+      "value": 0.25877084823800584,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "RW RMSE ema_fast (t>=100) [info]",
+      "value": 0.2898826203512876,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "RW RMSE window (t>=100) [info]",
+      "value": 0.16693875999451085,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "RW RMSE static / kalman",
+      "value": 2.283119377523884,
+      "criterion": ">2",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL static cov95(T)",
+      "value": 0.1346,
+      "criterion": "<0.90 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL eta_x0.2 |cov95(T)-0.95|",
+      "value": 0.5371999999999999,
+      "criterion": ">0.03 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL eta_x5 |cov95(T)-0.95|",
+      "value": 0.0363,
+      "criterion": ">0.03 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "SHIFT kalman median recovery (steps)",
+      "value": 21.0,
+      "criterion": "<=60",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "SHIFT kalman fraction recovered <=100",
+      "value": 1.0,
+      "criterion": ">=0.90",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL SHIFT static fraction recovered",
+      "value": 0.0,
+      "criterion": "<0.10 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "SHIFT ema median recovery [info]",
+      "value": 21.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "SHIFT ema_slow median recovery [info]",
+      "value": Infinity,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "SHIFT ema_fast median recovery [info]",
+      "value": 13.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "SHIFT window median recovery [info]",
+      "value": 17.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "SHIFT eta_x5 median recovery [info]",
+      "value": 9.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "SHIFT eta_x0.2 median recovery [info]",
+      "value": Infinity,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "TREND RMSE kalman (t>=100) [info]",
+      "value": 0.1466078886249323,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "TREND RMSE static (t>=100) [info]",
+      "value": 0.7613167707575788,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "TREND RMSE ema (t>=100) [info]",
+      "value": 0.14660820462364996,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "TREND RMSE window (t>=100) [info]",
+      "value": 0.14666304645516398,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    }
+  ],
+  "shift_recovery": {
+    "kalman": {
+      "median_steps": 21.0,
+      "frac_recovered": 1.0
+    },
+    "static": {
+      "median_steps": Infinity,
+      "frac_recovered": 0.0
+    },
+    "eta_x0.2": {
+      "median_steps": Infinity,
+      "frac_recovered": 0.2485
+    },
+    "eta_x5": {
+      "median_steps": 9.0,
+      "frac_recovered": 1.0
+    },
+    "lam_matched": {
+      "median_steps": 21.0,
+      "frac_recovered": 1.0
+    },
+    "lam_const": {
+      "median_steps": 21.0,
+      "frac_recovered": 1.0
+    },
+    "ema": {
+      "median_steps": 21.0,
+      "frac_recovered": 1.0
+    },
+    "window": {
+      "median_steps": 17.0,
+      "frac_recovered": 1.0
+    },
+    "ema_slow": {
+      "median_steps": Infinity,
+      "frac_recovered": 0.2504
+    },
+    "ema_fast": {
+      "median_steps": 13.0,
+      "frac_recovered": 0.9954
+    }
+  }
+}
