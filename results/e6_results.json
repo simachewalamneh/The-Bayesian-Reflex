@@ -1,0 +1,174 @@
+{
+  "scope": "uncertainty-driven query selection: stationary design (A), Thompson regret (C), drift (D); not the full closed loop (E7)",
+  "overall_pass": false,
+  "checks": [
+    {
+      "name": "A1 MSE variance vs random T=30",
+      "value": -0.00572938718954414,
+      "criterion": "<0 and p<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A1 MSE variance vs random T=100",
+      "value": -0.00011546070849200287,
+      "criterion": "<0 and p<0.01",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "A2 ratio MSE<0.02 [info]",
+      "value": 1.4285714285714286,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "A2 sample-complexity ratio random/variance (MSE<0.01)",
+      "value": 1.36,
+      "criterion": ">=1.2",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A2 ratio MSE<0.005 [info]",
+      "value": 1.0714285714285714,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "A3 CONTROL anti-variance MSE - random (T=100)",
+      "value": 0.3465202609168499,
+      "criterion": ">0 and p<0.01 (must be worse)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A4 info-gain picks == variance picks",
+      "value": 1.0,
+      "criterion": "==1",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A5 standin vs exact GP MSE T=30 (relative)",
+      "value": 0.21472443629222396,
+      "criterion": "<0.05",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "A5 standin vs exact GP MSE T=100 (relative)",
+      "value": 0.39936113527310263,
+      "criterion": "<0.05",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "A5 real vs exact GP MSE T=30 (relative)",
+      "value": 0.2955024695576091,
+      "criterion": "<0.05",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "A5 real vs exact GP MSE T=100 (relative)",
+      "value": 0.14548474879618115,
+      "criterion": "<0.05",
+      "passed": false,
+      "informational": false
+    },
+    {
+      "name": "POST-HOC teacher-forced standin vs exact GP MSE (max relative) [info]",
+      "value": 4.05598890592033e-05,
+      "criterion": "info (<1e-3 means engines agree)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "POST-HOC fraction identical picks standin vs exact GP [info]",
+      "value": 0.5674999999999999,
+      "criterion": "info (near-ties make sequences diverge)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "POST-HOC teacher-forced real vs exact GP MSE (max relative) [info]",
+      "value": 8.317081992967143e-05,
+      "criterion": "info (<1e-3 means engines agree)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "POST-HOC fraction identical picks real vs exact GP [info]",
+      "value": 0.38350000000000006,
+      "criterion": "info (near-ties make sequences diverge)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO chosen-point sd / mean sd (variance policy) [info]",
+      "value": 1.0575013830835274,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO chosen-point sd / mean sd (random) [info]",
+      "value": 0.9566769562074514,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO fraction of variance-policy queries with |x|>2.5 [info]",
+      "value": 0.333,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO fraction of random queries with |x|>2.5 [info]",
+      "value": 0.17125,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "C1 Thompson cum. regret(100) - random",
+      "value": -91.86471544118183,
+      "criterion": "<0 and p<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C2 last-25-step regret ratio Thompson/random",
+      "value": 0.013657340698962876,
+      "criterion": "<0.25",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C3 CONTROL anti-Thompson regret(100) - random",
+      "value": 91.5795446049392,
+      "criterion": ">0 and p<0.01 (must be worse)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "D1 drift tracking RMSE variance - random",
+      "value": -0.010519600370484106,
+      "criterion": "<0 and p<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "INFO drift tracking RMSE variance / random [info]",
+      "value": 0.9339311693228564,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    }
+  ]
+}

@@ -26,7 +26,8 @@ The paper reinterprets the "Bayesian reflex" (online Bayesian learning) as a com
 | E5-A | Scalar drift tracking vs Kalman oracle (known linear-Gaussian model) | frozen: PASS under v2 (original v1 miss recorded and diagnosed) |
 | E5-B | Functional drift, stand-in vs exact grid Kalman oracle | 20/21 checks; retention criterion missed; real PC-FSVI swap pending |
 | E5-B-real | Functional drift with the real FSVI + pc_infer (same data as stand-in) | 19/20 checks; reproduces stand-in and oracle; one tolerance miss at beta=0.9 |
-| E4b, E6-E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
+| E6 | Uncertainty-driven action (variance sampling, Thompson regret, drift) | partial: 8/13 checks (see docs) |
+| E4b, E7-E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
 
 ### Layout
 
@@ -52,6 +53,7 @@ python experiments/e4_real_pcfsvi.py      # ~3-5 min
 python experiments/e5a_scalar_drift.py
 python experiments/e5b_functional_drift.py
 python experiments/e5b_real_pcfsvi.py     # ~1-2 min
+python experiments/e6_uncertainty_action.py   # ~2-4 min
 ```
 
 ### Related papers
