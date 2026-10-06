@@ -1,0 +1,320 @@
+{
+  "scope": "user's real FSVI+pc_infer (adapter, utils shim) vs exact GP oracle on a sin(x) stream; not the continual-learning claims",
+  "primary_pass": true,
+  "checks": [
+    {
+      "name": "A fixed point max|dm| (T=1000)",
+      "value": 0.0006067057953058619,
+      "criterion": "<1e-3",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A fixed point max|dS| (T=1000)",
+      "value": 2.10061683819031e-05,
+      "criterion": "<1e-4",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=50 RMSE(mu_real - mu_gp)",
+      "value": 2.075065383195388e-06,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=50 relative sd RMSE",
+      "value": 6.158784368616007e-05,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=50 |LL gp - LL real|",
+      "value": 5.2343992099079806e-08,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=50 MSE excess vs GP",
+      "value": 1.5393552870168747e-06,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=1000 RMSE(mu_real - mu_gp)",
+      "value": 0.00013296293409316738,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=1000 relative sd RMSE",
+      "value": 0.008474211381304289,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=1000 |LL gp - LL real|",
+      "value": 7.875682287911134e-06,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "A T=1000 MSE excess vs GP",
+      "value": 0.0010173215342503816,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C fixed point max|dm| (T=1000)",
+      "value": 1.1825561695988362e-05,
+      "criterion": "<1e-3",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C fixed point max|dS| (T=1000)",
+      "value": 4.061022485521773e-07,
+      "criterion": "<1e-4",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=50 RMSE(mu_real - mu_gp)",
+      "value": 3.1902995150129823e-06,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=50 relative sd RMSE",
+      "value": 3.528808203226899e-05,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=50 |LL gp - LL real|",
+      "value": 1.8504743409808455e-07,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=50 MSE excess vs GP",
+      "value": 3.698275541363927e-07,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=1000 RMSE(mu_real - mu_gp)",
+      "value": 6.91952242689418e-06,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=1000 relative sd RMSE",
+      "value": 0.0008579740844486615,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=1000 |LL gp - LL real|",
+      "value": 4.379673108068083e-07,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C T=1000 MSE excess vs GP",
+      "value": -2.4703233478029496e-05,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "B fixed point max|dm| (T=1000) [info]",
+      "value": 0.0008560997148381044,
+      "criterion": "<1e-3",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B fixed point max|dS| (T=1000) [info]",
+      "value": 2.10061683819031e-05,
+      "criterion": "<1e-4",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=50 RMSE(mu_real - mu_gp) [info]",
+      "value": 0.0006510726984304608,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=50 relative sd RMSE [info]",
+      "value": 6.158784368616007e-05,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=50 |LL gp - LL real| [info]",
+      "value": 2.871322972823609e-05,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=50 MSE excess vs GP [info]",
+      "value": -0.0016002625274955662,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=1000 RMSE(mu_real - mu_gp) [info]",
+      "value": 0.00012255634484796492,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=1000 relative sd RMSE [info]",
+      "value": 0.008474211381304289,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=1000 |LL gp - LL real| [info]",
+      "value": 8.30481581690079e-06,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "B T=1000 MSE excess vs GP [info]",
+      "value": -0.00048001329633518,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D fixed point max|dm| (T=1000) [info]",
+      "value": 0.0005158630183460522,
+      "criterion": "<1e-3",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D fixed point max|dS| (T=1000) [info]",
+      "value": 4.061022485521773e-07,
+      "criterion": "<1e-4",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=50 RMSE(mu_real - mu_gp) [info]",
+      "value": 0.0036124737420316507,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=50 relative sd RMSE [info]",
+      "value": 3.528808203226899e-05,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=50 |LL gp - LL real| [info]",
+      "value": 0.0008934470763789087,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=50 MSE excess vs GP [info]",
+      "value": 0.017718406484210414,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=1000 RMSE(mu_real - mu_gp) [info]",
+      "value": 0.00024137306376088513,
+      "criterion": "<0.01",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=1000 relative sd RMSE [info]",
+      "value": 0.0008579740844486615,
+      "criterion": "<0.10",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=1000 |LL gp - LL real| [info]",
+      "value": 5.351623026747521e-05,
+      "criterion": "<0.02",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "D T=1000 MSE excess vs GP [info]",
+      "value": -0.003140702182088173,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "CONTROL real M=3 relative sd RMSE (T=1000)",
+      "value": 30.439352747431787,
+      "criterion": ">0.10 (must fail)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "latency real PC-FSVI t1000/t50",
+      "value": 0.975587375731968,
+      "criterion": "<3",
+      "passed": true,
+      "informational": false
+    }
+  ],
+  "latency_seconds": {
+    "50": {
+      "batch": 3.4314499998799874e-05,
+      "gp": 0.00011340349999855448,
+      "standin": 0.00017114199999213042,
+      "real": 0.005850620500002179
+    },
+    "200": {
+      "batch": 0.00021810599999838587,
+      "gp": 0.000218171500002029,
+      "standin": 0.0002020870000052355,
+      "real": 0.005694396500004473
+    },
+    "1000": {
+      "batch": 0.013732383499998946,
+      "gp": 0.0019802214999984358,
+      "standin": 0.00027335849999943207,
+      "real": 0.005707791500000781
+    }
+  }
+}
