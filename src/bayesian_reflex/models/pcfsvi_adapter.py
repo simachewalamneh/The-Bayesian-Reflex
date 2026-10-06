@@ -18,8 +18,8 @@ def _safe_chol(S, jitter=1e-8):          # same logic as continual_learning._saf
 
 
 class RealPCFSVI(GenerativeModel):
-    def __init__(self, M=20, domain=(-3.0, 3.0), sf=1.0, ell=1.0, sy=0.2, n_iters=150, lr=1.0, beta=1.0):
-        self.sy, self.n_iters, self.lr, self.beta = sy, n_iters, lr, beta
+    def __init__(self, M=20, domain=(-3.0, 3.0), sf=1.0, ell=1.0, sy=0.2, n_iters=150, lr=1.0, beta=1.0, sigma_eta=0.0):
+        self.sy, self.n_iters, self.lr, self.beta, self.sigma_eta = sy, n_iters, lr, beta, sigma_eta
         self.model = FSVI(np.linspace(*domain, M).reshape(-1, 1), lengthscale=ell, kernel_variance=sf, noise_std=sy)
         self.prior_mean, self.prior_cov = np.zeros(M), self.model.Kzz.copy()
 
@@ -33,7 +33,8 @@ class RealPCFSVI(GenerativeModel):
 
     def update_batch(self, X, y):
         X = np.asarray(X, float).reshape(-1, 1)
-        m, S, _ = pc_infer(self.model, X, np.asarray(y, float), self.prior_mean, self.prior_cov,
+        pcov = self.prior_cov + self.sigma_eta ** 2 * self.model.Kzz if self.sigma_eta else self.prior_cov   # E5-B drift time update
+        m, S, _ = pc_infer(self.model, X, np.asarray(y, float), self.prior_mean, pcov,
                            beta=self.beta, n_iters=self.n_iters, lr=self.lr)
         self.model.m, self.model.L = m, _safe_chol(S)
         self.prior_mean, self.prior_cov = self.model.posterior()
