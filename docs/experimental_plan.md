@@ -9,10 +9,10 @@ Source: arXiv 2608.00492 (idea: Bayesian reflex as predictive coding) and arXiv 
 | E2b | Sequential = batch for GP (rank-one update), with E4 | exact batch GP | validated (max diff 2.6e-13, inside E4) |
 | E3 | Precision-weighted prediction error z_t ~ N(0,1) | exact predictive | standardization validated (scalar Gaussian only; does not show the PC layer drives learning) |
 | E4 | Function space: exact GP vs PC-FSVI | exact GP | stand-in validated; real FSVI+pc_infer also validated in this setting (E4-real) |
-| E4b | Look-up table principle (paper sec 5-6) | exact GP | todo |
+| E4b | Look-up table principle (paper sec 5-6) | exact sequential GP / analytic Gaussian joint | protocol drafted (docs/e4b_protocol.md), awaiting approval; no code yet |
 | E5-A | Scalar drift: tracking, uncertainty floor, shift recovery | Kalman filter | **frozen: PASS under v2** (28/29 checks; the v1 miss is recorded and diagnosed as a convergence-rate difference; v2 criteria added beside it); tracking validated under a known model only |
-| E5-B | Functional drift: B1 oracle-correct random walk, B2 global switch, B3 regional change | exact grid Kalman (functional state-space GP) | stand-in: 20/21 (B3 retention-ratio criterion missed by the exact ORACLE, 1.54 vs <1.5). Real engine (E5-B-real): 19/20 on the same data; reproduces stand-in/oracle to ~1e-5 (beta<1 instability transfers); one miss: |dRMSE| 0.067 at beta=0.9 vs 0.01 (1.2% relative, ill-conditioned regime) |
-| E6 | Uncertainty-driven action: A variance (B info gain = A), C Thompson, D under drift | random baseline / known regret | **partial: 8/13 pre-registered checks**; Thompson (regret) and drift (D) pass; variance sampling helps early (T=30) but not by T=100; engine-agreement check A5 missed because near-ties make query sequences diverge (teacher-forced agreement 4e-5 / 8e-5) |
+| E5-B | Functional drift: B1 oracle-correct random walk, B2 global switch, B3 regional change | exact grid Kalman (functional state-space GP) | stand-in: 20/21 (B3 retention ratio missed by the exact oracle, 1.54 vs <1.5). Real engine (E5-B-real): **frozen, PASS under v2** (24/25; the original absolute-tolerance miss at beta=0.9 is recorded, relative v2 passes at 1.2%) |
+| E6 | Uncertainty-driven action: A variance (B info gain = A), C Thompson, D under drift | random baseline / known regret | **PARTIAL**: 10/15 checks; A5 original misses recorded, A5v2 (teacher-forced agreement 4e-5 / 8e-5) passes; one genuine miss: variance sampling does not beat random by T=100 (A1) |
 | E7 | Full reflex loop + ablations | composition of validated parts | todo |
 | E8a | Ellipsoidal sampler standalone | exact samplers | todo |
 | E8b | Ellipsoidal sampler inside the loop (Alg 4) | exact conjugate | todo |

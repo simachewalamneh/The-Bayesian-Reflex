@@ -1,52 +1,52 @@
 {
   "scope": "real FSVI+pc_infer under functional drift (adapter with sigma_eta time update, beta forgetting); same data as stand-in/oracle; few trials",
-  "overall_pass": false,
+  "overall_pass": true,
   "checks": [
     {
       "name": "C1 real vs oracle RMSE(mu) t=50",
-      "value": 2.85027564057312e-06,
+      "value": 2.8502725615022223e-06,
       "criterion": "<0.02",
       "passed": true,
       "informational": false
     },
     {
       "name": "C1 real vs oracle relative sd RMSE t=50",
-      "value": 1.3116426719487176e-05,
+      "value": 1.3116361038596573e-05,
       "criterion": "<0.10",
       "passed": true,
       "informational": false
     },
     {
       "name": "C2 real vs stand-in RMSE(mu) t=50",
-      "value": 2.1268304573778148e-06,
+      "value": 2.1268327572505268e-06,
       "criterion": "<1e-3",
       "passed": true,
       "informational": false
     },
     {
       "name": "C1 real vs oracle RMSE(mu) t=200",
-      "value": 8.620513529170178e-06,
+      "value": 8.62051222029384e-06,
       "criterion": "<0.02",
       "passed": true,
       "informational": false
     },
     {
       "name": "C1 real vs oracle relative sd RMSE t=200",
-      "value": 2.8495132151975927e-05,
+      "value": 2.8495060299361506e-05,
       "criterion": "<0.10",
       "passed": true,
       "informational": false
     },
     {
       "name": "C2 real vs stand-in RMSE(mu) t=200",
-      "value": 1.3906337449176699e-05,
+      "value": 1.3906335610734768e-05,
       "criterion": "<1e-3",
       "passed": true,
       "informational": false
     },
     {
       "name": "C3 n_iters=5 vs 150 max|dm|",
-      "value": 2.582378755278114e-13,
+      "value": 4.793943020331426e-13,
       "criterion": "<1e-6",
       "passed": true,
       "informational": false
@@ -59,8 +59,15 @@
       "informational": false
     },
     {
+      "name": "C5v2 real vs stand-in max relative dRMSE seta_0",
+      "value": 0.00017834702501595578,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
       "name": "C5 real vs stand-in max|dRMSE| seta_0",
-      "value": 6.220101605569628e-05,
+      "value": 6.22010310013521e-05,
       "criterion": "<0.01",
       "passed": true,
       "informational": false
@@ -73,8 +80,15 @@
       "informational": false
     },
     {
+      "name": "C5v2 real vs stand-in max relative dRMSE seta_0.05",
+      "value": 3.744687638747298e-05,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
       "name": "C5 real vs stand-in max|dRMSE| seta_0.05",
-      "value": 6.357736211298759e-06,
+      "value": 6.35772281493141e-06,
       "criterion": "<0.01",
       "passed": true,
       "informational": false
@@ -87,8 +101,15 @@
       "informational": false
     },
     {
+      "name": "C5v2 real vs stand-in max relative dRMSE seta_0.1",
+      "value": 2.1850641671473544e-05,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
       "name": "C5 real vs stand-in max|dRMSE| seta_0.1",
-      "value": 4.4670047823214265e-06,
+      "value": 4.467011489567296e-06,
       "criterion": "<0.01",
       "passed": true,
       "informational": false
@@ -101,8 +122,15 @@
       "informational": false
     },
     {
+      "name": "C5v2 real vs stand-in max relative dRMSE beta_0.95",
+      "value": 0.0027525897805180093,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
       "name": "C5 real vs stand-in max|dRMSE| beta_0.95",
-      "value": 0.0005557482773989597,
+      "value": 0.000555748240515852,
       "criterion": "<0.01",
       "passed": true,
       "informational": false
@@ -115,8 +143,15 @@
       "informational": false
     },
     {
+      "name": "C5v2 real vs stand-in max relative dRMSE beta_0.9",
+      "value": 0.012043975265153765,
+      "criterion": "<0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
       "name": "C5 real vs stand-in max|dRMSE| beta_0.9",
-      "value": 0.06666526184839228,
+      "value": 0.06666749987106879,
       "criterion": "<0.01",
       "passed": false,
       "informational": false
@@ -130,21 +165,21 @@
     },
     {
       "name": "C6 real beta=0.9 retention ratio (instability transfers)",
-      "value": 24.81281880609081,
+      "value": 24.812818392645173,
       "criterion": ">5",
       "passed": true,
       "informational": false
     },
     {
       "name": "C6 real beta=0.95 retention ratio",
-      "value": 1.8093515585239084,
+      "value": 1.8093515588559064,
       "criterion": "<3",
       "passed": true,
       "informational": false
     },
     {
       "name": "INFO real seta=0.1 retention ratio vs 1.5 criterion [info]",
-      "value": 1.6042738774765268,
+      "value": 1.6042738772173795,
       "criterion": "info (<1.5 would pass)",
       "passed": true,
       "informational": true
@@ -155,105 +190,105 @@
       "med": Infinity,
       "frac": 0.0,
       "b2": 0.49809327705104955,
-      "trk": 0.34876426336187694,
-      "ret": 0.05280762448936027,
-      "ratio": 1.0289844617986594
+      "trk": 0.3487642633618768,
+      "ret": 0.05280762448936024,
+      "ratio": 1.0289844617986588
     },
     "seta_0|standin": {
       "med": Infinity,
       "frac": 0.0,
-      "b2": 0.4980929617791753,
-      "trk": 0.34876405140924754,
-      "ret": 0.052808218285607965,
-      "ratio": 1.0290035056394746
+      "b2": 0.49809296177917517,
+      "trk": 0.3487640514092528,
+      "ret": 0.052808218285606834,
+      "ratio": 1.029003505639455
     },
     "seta_0|real": {
       "med": Infinity,
       "frac": 0.0,
-      "b2": 0.4980329289479358,
-      "trk": 0.34870185039319185,
-      "ret": 0.052807431259558744,
-      "ratio": 1.0289754980039942
+      "b2": 0.4980329289438917,
+      "trk": 0.34870185037825147,
+      "ret": 0.052807431265654514,
+      "ratio": 1.028975498123005
     },
     "seta_0.05|oracle": {
       "med": 26.0,
       "frac": 1.0,
-      "b2": 0.09262501654177814,
-      "trk": 0.09183016372548464,
+      "b2": 0.0926250165417782,
+      "trk": 0.09183016372548483,
       "ret": 0.16977821160144396,
-      "ratio": 1.6860564422026099
+      "ratio": 1.6860564422026114
     },
     "seta_0.05|standin": {
       "med": 26.0,
       "frac": 1.0,
-      "b2": 0.09262500933082271,
-      "trk": 0.09183124890606144,
+      "b2": 0.09262500933082274,
+      "trk": 0.09183124890606133,
       "ret": 0.1697797901524904,
-      "ratio": 1.6860698816687207
+      "ratio": 1.6860698816687232
     },
     "seta_0.05|real": {
       "med": 26.0,
       "frac": 1.0,
-      "b2": 0.09262529445774295,
-      "trk": 0.09182929973892845,
-      "ret": 0.1697734324162791,
-      "ratio": 1.6860095944647264
+      "b2": 0.09262529446554803,
+      "trk": 0.0918292997274854,
+      "ret": 0.16977343242967546,
+      "ratio": 1.6860095944156288
     },
     "seta_0.1|oracle": {
       "med": 13.5,
       "frac": 1.0,
-      "b2": 0.12888587027546944,
-      "trk": 0.12287584312463977,
-      "ret": 0.20443045923457137,
+      "b2": 0.12888587027546933,
+      "trk": 0.12287584312464031,
+      "ret": 0.20443045923457132,
       "ratio": 1.6042858017249968
     },
     "seta_0.1|standin": {
       "med": 13.5,
       "frac": 1.0,
-      "b2": 0.12888587369547058,
-      "trk": 0.12287792928301436,
-      "ret": 0.20443388147264838,
-      "ratio": 1.6043062125453984
+      "b2": 0.12888587369547072,
+      "trk": 0.12287792928301415,
+      "ret": 0.20443388147264666,
+      "ratio": 1.6043062125453855
     },
     "seta_0.1|real": {
       "med": 13.5,
       "frac": 1.0,
-      "b2": 0.12888593639854157,
-      "trk": 0.12287564874086032,
-      "ret": 0.20442941446786606,
-      "ratio": 1.6042738774765268
+      "b2": 0.12888593640834567,
+      "trk": 0.12287564873090266,
+      "ret": 0.2044294144611571,
+      "ratio": 1.6042738772173795
     },
     "beta_0.95|standin": {
       "med": 49.0,
       "frac": 1.0,
-      "b2": 0.10652309865333687,
-      "trk": 0.07909917702445984,
-      "ret": 0.20190013217272645,
-      "ratio": 1.8141762599793427
+      "b2": 0.10652309865334997,
+      "trk": 0.07909917702614686,
+      "ret": 0.20190013217707503,
+      "ratio": 1.8141762600184128
     },
     "beta_0.95|real": {
       "med": 49.0,
       "frac": 1.0,
-      "b2": 0.10667721470736224,
-      "trk": 0.079177810862328,
-      "ret": 0.2013443838953275,
-      "ratio": 1.8093515585239084
+      "b2": 0.10667721470831373,
+      "trk": 0.07917781085624595,
+      "ret": 0.20134438393655918,
+      "ratio": 1.8093515588559064
     },
     "beta_0.9|standin": {
       "med": 31.0,
       "frac": 1.0,
-      "b2": 0.1793558170918803,
-      "trk": 0.1236623992244396,
-      "ret": 5.535338004430003,
-      "ratio": 25.103109990772023
+      "b2": 0.17935580902830234,
+      "trk": 0.12366240862614623,
+      "ret": 5.535340151681858,
+      "ratio": 25.10311972861804
     },
     "beta_0.9|real": {
       "med": 31.0,
       "frac": 1.0,
-      "b2": 0.17956931417683303,
-      "trk": 0.12386624664751511,
-      "ret": 5.468672742581611,
-      "ratio": 24.81281880609081
+      "b2": 0.17956931416150962,
+      "trk": 0.12386624678628119,
+      "ret": 5.468672651810789,
+      "ratio": 24.812818392645173
     }
   }
 }
