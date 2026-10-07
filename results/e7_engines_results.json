@@ -1,0 +1,286 @@
+{
+  "exact_reduced": {
+    "verdict": "PASS",
+    "seeds": 5,
+    "trials": 40,
+    "mean_rmse": {
+      "FULL": 0.1841152254365626,
+      "A1_no_action": 0.2126515483423479,
+      "A2_no_drift": 0.4936275837307721,
+      "A3_no_pc_feedback": 0.19575468269941668,
+      "A4_none": 0.5068659382467231,
+      "CONTROL_wrong_sy": 0.19964111558239211
+    },
+    "recovery": {
+      "FULL": 10.0,
+      "A1_no_action": 16.0,
+      "A2_no_drift": Infinity,
+      "A3_no_pc_feedback": 18.0,
+      "A4_none": Infinity,
+      "CONTROL_wrong_sy": 8.0
+    },
+    "checks": [
+      {
+        "name": "C1 FULL - A1_no_action RMSE",
+        "value": -0.028536322905785283,
+        "criterion": "<0, p<0.01 (p=1.2e-05)",
+        "status": "PASS"
+      },
+      {
+        "name": "C2 FULL - A2_no_drift RMSE",
+        "value": -0.3095123582942095,
+        "criterion": "<0, p<0.01 (p=3.1e-07)",
+        "status": "PASS"
+      },
+      {
+        "name": "C3 median recovery FULL / A3",
+        "value": 0.5555555555555556,
+        "criterion": "<=0.8 (FULL 10.0, A3 18.0)",
+        "status": "PASS"
+      },
+      {
+        "name": "C4 upper CI rel. RMSE FULL vs A3 (t=20..99)",
+        "value": 0.01738947576583065,
+        "criterion": "<0.05",
+        "status": "PASS"
+      },
+      {
+        "name": "C5 FULL cov95 pre-shift",
+        "value": 0.9580304878048781,
+        "criterion": "|v-0.95|<0.03",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 after shift",
+        "value": 14.134666629727501,
+        "criterion": ">3",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 pre-shift",
+        "value": 0.9883678774181487,
+        "criterion": "|v-1|<0.0335",
+        "status": "PASS"
+      },
+      {
+        "name": "CONTROL wrong sigma_y mean z^2",
+        "value": 1.8353516900023796,
+        "criterion": ">1.5 (must fail calibration)",
+        "status": "PASS"
+      }
+    ]
+  },
+  "standin_reduced": {
+    "verdict": "PASS",
+    "seeds": 5,
+    "trials": 40,
+    "mean_rmse": {
+      "FULL": 0.18264373315290597,
+      "A1_no_action": 0.21265149625370477,
+      "A2_no_drift": 0.4887222129904769,
+      "A3_no_pc_feedback": 0.1893517417779637,
+      "A4_none": 0.5068658427223094,
+      "CONTROL_wrong_sy": 0.19886149065268427
+    },
+    "recovery": {
+      "FULL": 10.0,
+      "A1_no_action": 16.0,
+      "A2_no_drift": Infinity,
+      "A3_no_pc_feedback": 17.0,
+      "A4_none": Infinity,
+      "CONTROL_wrong_sy": 8.0
+    },
+    "checks": [
+      {
+        "name": "C1 FULL - A1_no_action RMSE",
+        "value": -0.030007763100798807,
+        "criterion": "<0, p<0.01 (p=3.0e-06)",
+        "status": "PASS"
+      },
+      {
+        "name": "C2 FULL - A2_no_drift RMSE",
+        "value": -0.30607847983757097,
+        "criterion": "<0, p<0.01 (p=1.4e-07)",
+        "status": "PASS"
+      },
+      {
+        "name": "C3 median recovery FULL / A3",
+        "value": 0.5882352941176471,
+        "criterion": "<=0.8 (FULL 10.0, A3 17.0)",
+        "status": "PASS"
+      },
+      {
+        "name": "C4 upper CI rel. RMSE FULL vs A3 (t=20..99)",
+        "value": 0.014193829577193054,
+        "criterion": "<0.05",
+        "status": "PASS"
+      },
+      {
+        "name": "C5 FULL cov95 pre-shift",
+        "value": 0.960466463414634,
+        "criterion": "|v-0.95|<0.03",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 after shift",
+        "value": 11.966440914754514,
+        "criterion": ">3",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 pre-shift",
+        "value": 0.9997351866196387,
+        "criterion": "|v-1|<0.0335",
+        "status": "PASS"
+      },
+      {
+        "name": "CONTROL wrong sigma_y mean z^2",
+        "value": 1.8469611986517172,
+        "criterion": ">1.5 (must fail calibration)",
+        "status": "PASS"
+      }
+    ]
+  },
+  "standin_full": {
+    "verdict": "PASS",
+    "seeds": 10,
+    "trials": 200,
+    "mean_rmse": {
+      "FULL": 0.18367789365550521,
+      "A1_no_action": 0.2122845574647934,
+      "A2_no_drift": 0.49888320181348034,
+      "A3_no_pc_feedback": 0.19084025756809098,
+      "A4_none": 0.5145801566410976,
+      "CONTROL_wrong_sy": 0.1993194237282278
+    },
+    "recovery": {
+      "FULL": 10.0,
+      "A1_no_action": 15.0,
+      "A2_no_drift": Infinity,
+      "A3_no_pc_feedback": 16.0,
+      "A4_none": Infinity,
+      "CONTROL_wrong_sy": 8.0
+    },
+    "checks": [
+      {
+        "name": "C1 FULL - A1_no_action RMSE",
+        "value": -0.028606663809288196,
+        "criterion": "<0, p<0.01 (p=3.6e-12)",
+        "status": "PASS"
+      },
+      {
+        "name": "C2 FULL - A2_no_drift RMSE",
+        "value": -0.3152053081579751,
+        "criterion": "<0, p<0.01 (p=1.0e-19)",
+        "status": "PASS"
+      },
+      {
+        "name": "C3 median recovery FULL / A3",
+        "value": 0.625,
+        "criterion": "<=0.8 (FULL 10.0, A3 16.0)",
+        "status": "PASS"
+      },
+      {
+        "name": "C4 upper CI rel. RMSE FULL vs A3 (t=20..99)",
+        "value": 0.0007258344514191259,
+        "criterion": "<0.05",
+        "status": "PASS"
+      },
+      {
+        "name": "C5 FULL cov95 pre-shift",
+        "value": 0.958325,
+        "criterion": "|v-0.95|<0.03",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 after shift",
+        "value": 12.00598568282911,
+        "criterion": ">3",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 pre-shift",
+        "value": 0.9985968435323171,
+        "criterion": "|v-1|<0.0106",
+        "status": "PASS"
+      },
+      {
+        "name": "CONTROL wrong sigma_y mean z^2",
+        "value": 1.8357091656539866,
+        "criterion": ">1.5 (must fail calibration)",
+        "status": "PASS"
+      }
+    ]
+  },
+  "real_reduced": {
+    "verdict": "PASS",
+    "seeds": 5,
+    "trials": 40,
+    "mean_rmse": {
+      "FULL": 0.1830010220421098,
+      "A1_no_action": 0.2126516679933545,
+      "A2_no_drift": 0.4881715505926909,
+      "A3_no_pc_feedback": 0.18812429641622894,
+      "A4_none": 0.5068499721242659,
+      "CONTROL_wrong_sy": 0.19818928471798142
+    },
+    "recovery": {
+      "FULL": 10.0,
+      "A1_no_action": 16.0,
+      "A2_no_drift": Infinity,
+      "A3_no_pc_feedback": 16.0,
+      "A4_none": Infinity,
+      "CONTROL_wrong_sy": 7.0
+    },
+    "checks": [
+      {
+        "name": "C1 FULL - A1_no_action RMSE",
+        "value": -0.029650645951244697,
+        "criterion": "<0, p<0.01 (p=1.1e-06)",
+        "status": "PASS"
+      },
+      {
+        "name": "C2 FULL - A2_no_drift RMSE",
+        "value": -0.30517052855058113,
+        "criterion": "<0, p<0.01 (p=2.7e-07)",
+        "status": "PASS"
+      },
+      {
+        "name": "C3 median recovery FULL / A3",
+        "value": 0.625,
+        "criterion": "<=0.8 (FULL 10.0, A3 16.0)",
+        "status": "PASS"
+      },
+      {
+        "name": "C4 upper CI rel. RMSE FULL vs A3 (t=20..99)",
+        "value": 0.01805164580155516,
+        "criterion": "<0.05",
+        "status": "PASS"
+      },
+      {
+        "name": "C5 FULL cov95 pre-shift",
+        "value": 0.9582835365853658,
+        "criterion": "|v-0.95|<0.03",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 after shift",
+        "value": 9.7166916302162,
+        "criterion": ">3",
+        "status": "PASS"
+      },
+      {
+        "name": "C6 A3 mean z^2 pre-shift",
+        "value": 0.986553709036854,
+        "criterion": "|v-1|<0.0335",
+        "status": "PASS"
+      },
+      {
+        "name": "CONTROL wrong sigma_y mean z^2",
+        "value": 1.8225007803209123,
+        "criterion": ">1.5 (must fail calibration)",
+        "status": "PASS"
+      }
+    ]
+  }
+}
