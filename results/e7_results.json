@@ -1,0 +1,153 @@
+{
+  "scope": "closed reflex loop, exact-grid reference agent; not the paper's LUT/ellipsoidal mechanisms; engines pending",
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "C1 FULL RMSE - A1_no_action (mean over t=1..200)",
+      "value": -0.028024055835259187,
+      "criterion": "<0 and p<0.01 (p=6.7e-13)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C2 FULL RMSE - A2_no_drift (mean over t=1..200)",
+      "value": -0.3181764619938935,
+      "criterion": "<0 and p<0.01 (p=1.4e-19)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C3 median recovery FULL / A3",
+      "value": 0.5882352941176471,
+      "criterion": "<=0.8 (FULL 10.0, A3 17.0 steps)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C4 upper 95% CI of relative RMSE difference FULL vs A3 (t=20..99)",
+      "value": 0.00690053840530082,
+      "criterion": "<+0.05",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C5 FULL cov95 pre-shift (t=20..99)",
+      "value": 0.9575890243902438,
+      "criterion": "|v-0.95|<0.03",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C6 A3 mean z^2 after shift (t=101..105)",
+      "value": 14.110652387454751,
+      "criterion": ">3",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "C6 A3 mean z^2 pre-shift (t=20..99)",
+      "value": 0.9981752356591778,
+      "criterion": "|v-1|<0.0106",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "CONTROL wrong sigma_y: mean z^2 (t=20..99)",
+      "value": 1.8397026644516725,
+      "criterion": ">1.5 (must fail calibration)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "INFO FULL vs A4 (none) relative RMSE [info]",
+      "value": -0.6419206588794699,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO FULL mean RMSE (t=1..200) [info]",
+      "value": 0.18426055503311534,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO FULL median recovery steps [info]",
+      "value": 10.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A1_no_action mean RMSE (t=1..200) [info]",
+      "value": 0.21228461086837452,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A1_no_action median recovery steps [info]",
+      "value": 15.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A2_no_drift mean RMSE (t=1..200) [info]",
+      "value": 0.5024370170270088,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A2_no_drift median recovery steps [info]",
+      "value": Infinity,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A3_no_pc_feedback mean RMSE (t=1..200) [info]",
+      "value": 0.1959153047927993,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A3_no_pc_feedback median recovery steps [info]",
+      "value": 17.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A4_none mean RMSE (t=1..200) [info]",
+      "value": 0.5145802448600153,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO A4_none median recovery steps [info]",
+      "value": Infinity,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO CONTROL_wrong_sy mean RMSE (t=1..200) [info]",
+      "value": 0.19979757959134495,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "INFO CONTROL_wrong_sy median recovery steps [info]",
+      "value": 7.0,
+      "criterion": "info",
+      "passed": true,
+      "informational": true
+    }
+  ]
+}
