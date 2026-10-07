@@ -4,14 +4,14 @@
   "checks": [
     {
       "name": "A1 MSE variance vs random T=30",
-      "value": -0.005729387189544122,
+      "value": -0.00572938718954414,
       "criterion": "<0 and p<0.01",
       "passed": true,
       "informational": false
     },
     {
       "name": "A1 MSE variance vs random T=100",
-      "value": -0.00011546070849200417,
+      "value": -0.00011546070849200287,
       "criterion": "<0 and p<0.01",
       "passed": false,
       "informational": false
@@ -39,7 +39,7 @@
     },
     {
       "name": "A3 CONTROL anti-variance MSE - random (T=100)",
-      "value": 0.3465202609168496,
+      "value": 0.3465202609168499,
       "criterion": ">0 and p<0.01 (must be worse)",
       "passed": true,
       "informational": false
@@ -53,49 +53,49 @@
     },
     {
       "name": "A5 standin vs exact GP MSE T=30 (relative)",
-      "value": 0.253577989414342,
+      "value": 0.21472443629222396,
       "criterion": "<0.05",
       "passed": false,
       "informational": false
     },
     {
       "name": "A5 standin vs exact GP MSE T=100 (relative)",
-      "value": 0.3969207122840557,
+      "value": 0.39936113527310263,
       "criterion": "<0.05",
       "passed": false,
       "informational": false
     },
     {
       "name": "A5 real vs exact GP MSE T=30 (relative)",
-      "value": 0.295502469611479,
+      "value": 0.2955024695576091,
       "criterion": "<0.05",
       "passed": false,
       "informational": false
     },
     {
       "name": "A5 real vs exact GP MSE T=100 (relative)",
-      "value": 0.14548474910863482,
+      "value": 0.14548474879618115,
       "criterion": "<0.05",
       "passed": false,
       "informational": false
     },
     {
       "name": "A5v2 teacher-forced standin vs exact GP MSE (max relative)",
-      "value": 4.0559888992836786e-05,
+      "value": 4.05598890592033e-05,
       "criterion": "<1e-3",
       "passed": true,
       "informational": false
     },
     {
       "name": "POST-HOC fraction identical picks standin vs exact GP [info]",
-      "value": 0.5684999999999999,
+      "value": 0.5674999999999999,
       "criterion": "info (near-ties make sequences diverge)",
       "passed": true,
       "informational": true
     },
     {
       "name": "A5v2 teacher-forced real vs exact GP MSE (max relative)",
-      "value": 8.317094157744815e-05,
+      "value": 8.317081992967143e-05,
       "criterion": "<1e-3",
       "passed": true,
       "informational": false
@@ -109,14 +109,14 @@
     },
     {
       "name": "INFO chosen-point sd / mean sd (variance policy) [info]",
-      "value": 1.057501383083525,
+      "value": 1.0575013830835274,
       "criterion": "info",
       "passed": true,
       "informational": true
     },
     {
       "name": "INFO chosen-point sd / mean sd (random) [info]",
-      "value": 0.956676956207452,
+      "value": 0.9566769562074514,
       "criterion": "info",
       "passed": true,
       "informational": true
@@ -137,35 +137,35 @@
     },
     {
       "name": "C1 Thompson cum. regret(100) - random",
-      "value": -91.96349982147497,
+      "value": -91.86471544118183,
       "criterion": "<0 and p<0.01",
       "passed": true,
       "informational": false
     },
     {
       "name": "C2 last-25-step regret ratio Thompson/random",
-      "value": 0.012826709467485424,
+      "value": 0.013657340698962876,
       "criterion": "<0.25",
       "passed": true,
       "informational": false
     },
     {
       "name": "C3 CONTROL anti-Thompson regret(100) - random",
-      "value": 91.66174849462354,
+      "value": 91.5795446049392,
       "criterion": ">0 and p<0.01 (must be worse)",
       "passed": true,
       "informational": false
     },
     {
       "name": "D1 drift tracking RMSE variance - random",
-      "value": -0.010519600372472265,
+      "value": -0.010519600370484106,
       "criterion": "<0 and p<0.01",
       "passed": true,
       "informational": false
     },
     {
       "name": "INFO drift tracking RMSE variance / random [info]",
-      "value": 0.9339311693112905,
+      "value": 0.9339311693228564,
       "criterion": "info",
       "passed": true,
       "informational": true
