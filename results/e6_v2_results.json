@@ -1,0 +1,49 @@
+{
+  "scope": "post-hoc v2 criteria tested on fresh seeds; original A1 (T=100) stays a recorded miss",
+  "seeds": "5000..5199",
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "V2-A1 ratio tau=0.02",
+      "value": 1.3571428571428572,
+      "criterion": ">=1.2 and CI lower>1 (CI [1.29,1.58])",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "V2-A1 ratio tau=0.01",
+      "value": 1.2758620689655173,
+      "criterion": ">=1.2 and CI lower>1 (CI [1.12,1.43])",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "V2-A1 ratio tau=0.005 [info]",
+      "value": 1.098360655737705,
+      "criterion": "info (CI [1.00,1.24]; predicted ~1)",
+      "passed": true,
+      "informational": true
+    },
+    {
+      "name": "V2-A1r T=30 mean MSE diff (variance - random)",
+      "value": -0.0024085709957001916,
+      "criterion": "<0 and p<0.01 (p=2.6e-05, rel -19.9%)",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "V2-A2 non-inferiority T=100 (upper CI bound)",
+      "value": 0.055291117182208464,
+      "criterion": "<+0.10",
+      "passed": true,
+      "informational": false
+    },
+    {
+      "name": "V2-A2 non-inferiority T=200 (upper CI bound)",
+      "value": 0.05275158613751538,
+      "criterion": "<+0.10",
+      "passed": true,
+      "informational": false
+    }
+  ]
+}
