@@ -1,4 +1,4 @@
-# E7 protocol (DRAFT, awaiting approval): the closed Bayesian reflex loop with ablations
+# E7 protocol (APPROVED; thresholds frozen; exact-grid reference agent first): the closed Bayesian reflex loop with ablations
 
 Scope if it passes: the integrated loop (belief with drift model -> prediction + standardized error -> belief update -> uncertainty-driven action -> new observation) behaves coherently in a drifting, abruptly shifting environment, and each component earns its place by ablation. Built on our validated components (exact functional Kalman belief; the stand-in and real PC-FSVI afterwards). It does NOT test the paper's look-up-table or ellipsoidal machinery (E4b/E8 are deferred by decision) and does not validate the paper's claims about them.
 
@@ -29,7 +29,10 @@ Grid RMSE over time; recovery steps after the shift (first step with RMSE <= 1.5
 ## Implementation note
 Error-driven plasticity makes the covariance differ per trial, so the belief is batched (n x G x G); the cost is acceptable at G=41.
 
-## Decisions needed
+## Decisions taken (user)
+1. Error-driven plasticity approved as written (plasticity uses z^2 of the previous 5 steps, since the current z depends on the current noise level). 2. Exact grid first, then stand-in and real. 3. E4b stays deferred. 4. Thresholds frozen; no change after seeing results.
+
+## (superseded) Decisions needed
 1. PC layer role: the plasticity rule above makes the error DRIVE the update (resolving the open decision), and is itself a new, unvalidated mechanism tested by C3/C4. Approve, or restrict E7 to report-only (drop C3/C4/A3)?
 2. Engine order: exact grid first, then stand-in and real as confirmation.
 3. Confirm that E4b is deferred and that claims stay scoped as above.
