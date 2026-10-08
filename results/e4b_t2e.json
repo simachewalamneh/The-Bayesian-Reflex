@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "name": "T2e 2-D gauss: sup-variance slope vs total points N=m^2",
+      "value": -3.8235978334368057,
+      "criterion": "info (exp prediction -0.5)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D gauss: sup-variance slope vs points per axis m",
+      "value": -7.647195666873611,
+      "criterion": "info (exp prediction -1)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D exp: sup-variance slope vs total points N=m^2",
+      "value": -0.43781925377431424,
+      "criterion": "info (exp prediction -0.5)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D exp: sup-variance slope vs points per axis m",
+      "value": -0.8756385075486285,
+      "criterion": "info (exp prediction -1)",
+      "status": "PASS",
+      "info": true
+    }
+  ],
+  "info": {
+    "ms": [
+      3,
+      5,
+      8,
+      12,
+      18,
+      25
+    ],
+    "values": {
+      "gauss": [
+        0.5742571802529444,
+        0.08283823538626212,
+        0.0028576261259640745,
+        1.11878162215584e-05,
+        1.2355247269724146e-08,
+        4.727299773854554e-09
+      ],
+      "exp": [
+        0.8219792750149721,
+        0.5893874119780586,
+        0.39459108708755475,
+        0.26980746763634467,
+        0.18193649822124935,
+        0.13160902256420692
+      ]
+    }
+  }
+}

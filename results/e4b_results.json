@@ -1,0 +1,362 @@
+{
+  "checks": [
+    {
+      "name": "T1 N=20 ||A A^-1 - I||_F/sqrt(n+N), explicit inverse",
+      "value": 2.6463603589599853e-07,
+      "criterion": "<1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T1 N=20 same residual, Cholesky solve (used in simulation)",
+      "value": 2.7184323531398988e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=20 cond(A)",
+      "value": 861421303.8790144,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=100 ||A A^-1 - I||_F/sqrt(n+N), explicit inverse",
+      "value": 1.3274862886307602e-05,
+      "criterion": "<1e-6",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T1 N=100 same residual, Cholesky solve (used in simulation)",
+      "value": 8.947982139854355e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=100 cond(A)",
+      "value": 3224465663.8102527,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2a Gaussian L2 mean error: non-increasing and <1e-6 at n=40",
+      "value": 1.2550617385436594e-05,
+      "criterion": "non-increasing, <1e-6",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2a Gaussian sup mean error: non-increasing and <1e-6 at n=40",
+      "value": 7.353970097478957e-05,
+      "criterion": "non-increasing, <1e-6",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2a Gaussian sup variance: non-increasing and <1e-6 at n=40",
+      "value": 1.10979406331424e-07,
+      "criterion": "non-increasing, <1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T2a exponential sup-variance slope",
+      "value": -0.8848045680712326,
+      "criterion": "in [-1.2,-0.8]",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T2a exponential sup-mean-error slope",
+      "value": -0.8870322747925757,
+      "criterion": "in [-2.3,-1.7]",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2a exponential L2-mean-error slope",
+      "value": -1.535438007527443,
+      "criterion": "in [-2.3,-1.7]",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2a paper claim 'at least O(1/n)': max fitted slope, gauss",
+      "value": -2.5226519527876694,
+      "criterion": "<=-0.9",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T2a paper claim 'at least O(1/n)': max fitted slope, exp",
+      "value": -0.8848045680712326,
+      "criterion": "<=-0.9",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2b Gaussian KL(exact||LUT): non-increasing and KL_80<1e-6",
+      "value": 1.0735673089194222,
+      "criterion": "non-increasing, <1e-6",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2b exponential KL: non-increasing",
+      "value": 6.198271723251894,
+      "criterion": "non-increasing",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2b CONTROL coarse grid: KL_5 (Gaussian)",
+      "value": 16.34838763039855,
+      "criterion": ">1e-2 and >100*KL_80",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T2b exponential KL slope (info)",
+      "value": -0.29631188979352435,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2b [diag] Gaussian KL_80 at jitter 1e-8 / 1e-10 / 1e-12",
+      "value": 1.0735673089194222,
+      "criterion": "info: ['1.1e+00', '4.3e-02', '4.7e-02']",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2c N=100 on [-30,30]: sup variance over [-2,1.1]",
+      "value": 5.211228483181785e-07,
+      "criterion": "info (prediction: both <1e-6)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2c N=100 on [-4,4]: sup variance over [-2,1.1]",
+      "value": 1.7719199441046385e-09,
+      "criterion": "info (prediction: both <1e-6)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D gauss: sup-variance slope vs total points N=m^2",
+      "value": -3.8235978334368057,
+      "criterion": "info (exp prediction -0.5)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D gauss: sup-variance slope vs points per axis m",
+      "value": -7.647195666873611,
+      "criterion": "info (exp prediction -1)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D exp: sup-variance slope vs total points N=m^2",
+      "value": -0.43781925377431424,
+      "criterion": "info (exp prediction -0.5)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2e 2-D exp: sup-variance slope vs points per axis m",
+      "value": -0.8756385075486285,
+      "criterion": "info (exp prediction -1)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T3 v_1 not in grid (min distance > 1e-6)",
+      "value": 0.03584799999999966,
+      "criterion": ">1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 max |sample mean - analytic| / SE",
+      "value": 0.8087674466998278,
+      "criterion": "<4.5",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 max |sample cov - analytic| / SE",
+      "value": 1.2103382945363466,
+      "criterion": "<4.5",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 simulation failures",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a C4a LUT (Cholesky precompute) failures over all T",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a C4b LUT per-step time ratio T=5000 / T=100",
+      "value": 0.4999075408588322,
+      "criterion": "<2",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a [info] failure rate lut_inv",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0, 1000: 1.0, 5000: 1.0}; median first failure 3.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a [info] failure rate chol_jit0",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0, 1000: 1.0}; median first failure 8.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a [info] failure rate chol_jit1e-8",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a [info] failure rate naive_jit0",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0}; median first failure 6.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4b C4a LUT (Cholesky precompute) failures over all T",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4b [info] failure rate lut_inv",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4b [info] failure rate chol_jit0",
+      "value": 1.0,
+      "criterion": "info: {20: 0.0, 50: 0.35, 100: 0.65, 500: 1.0}; median first failure 90.5",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4b [info] failure rate chol_jit1e-8",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4b [info] failure rate naive_jit0",
+      "value": 1.0,
+      "criterion": "info: {20: 0.2, 50: 0.7, 100: 0.9, 500: 1.0}; median first failure 33.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.001 C4a LUT (Cholesky precompute) failures over all T",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a nugget_sd=0.001 [info] failure rate lut_inv",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0, 1000: 1.0, 5000: 1.0}; median first failure 2.5",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.001 [info] failure rate chol_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.001 [info] failure rate chol_jit1e-8",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.001 [info] failure rate naive_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 C4a LUT (Cholesky precompute) failures over all T",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate lut_inv",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0, 1000: 1.0, 5000: 1.0}; median first failure 3.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate chol_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate chol_jit1e-8",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate naive_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4 C4c min KS p-value over t=1..10 (LUT vs exact jitter 1e-8)",
+      "value": 0.40671816589876386,
+      "criterion": ">0.001",
+      "status": "PASS",
+      "info": false
+    }
+  ],
+  "parts_missing": []
+}

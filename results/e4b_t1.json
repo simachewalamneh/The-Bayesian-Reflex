@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "name": "T1 N=20 ||A A^-1 - I||_F/sqrt(n+N), explicit inverse",
+      "value": 2.6463603589599853e-07,
+      "criterion": "<1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T1 N=20 same residual, Cholesky solve (used in simulation)",
+      "value": 2.7184323531398988e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=20 cond(A)",
+      "value": 861421303.8790144,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=100 ||A A^-1 - I||_F/sqrt(n+N), explicit inverse",
+      "value": 1.3274862886307602e-05,
+      "criterion": "<1e-6",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "T1 N=100 same residual, Cholesky solve (used in simulation)",
+      "value": 8.947982139854355e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T1 N=100 cond(A)",
+      "value": 3224465663.8102527,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    }
+  ],
+  "info": {}
+}

@@ -1,0 +1,384 @@
+{
+  "rows": [
+    {
+      "name": "V1a N=20 Cholesky residual",
+      "value": 2.7184323531398988e-08,
+      "criterion": "<1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V1b N=20 explicit-inverse residual vs 100*cond*eps",
+      "value": 2.6463603589599853e-07,
+      "criterion": "<= 1.9e-05 (cond 8.6e+08)",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V1a N=100 Cholesky residual",
+      "value": 8.947982139854355e-08,
+      "criterion": "<1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V1b N=100 explicit-inverse residual vs 100*cond*eps",
+      "value": 1.3274862886307602e-05,
+      "criterion": "<= 7.1e-05 (cond 3.2e+09)",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V1a N=200 Cholesky residual",
+      "value": 2.1769382761423264e-07,
+      "criterion": "<1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V1b N=200 explicit-inverse residual vs 100*cond*eps",
+      "value": 2.4574553133983365e-05,
+      "criterion": "<= 1.4e-04 (cond 6.2e+09)",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V2 eta* jitter 1e-08: floor (min over n>=40), plateau ratio 7.51",
+      "value": 9.792771845651416e-06,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2 eta* jitter 1e-10: floor (min over n>=40), plateau ratio 13.64",
+      "value": 9.191318894874456e-07,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2 eta* jitter 1e-12: floor (min over n>=40), plateau ratio 27.44",
+      "value": 8.501065162924704e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2a eta* floor at jitter 1e-8 <= 3e-4",
+      "value": 9.792771845651416e-06,
+      "criterion": "<=3e-4",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V2b eta* floor ratios 1e-8/1e-10 and 1e-10/1e-12 (min)",
+      "value": 10.65437067047294,
+      "criterion": ">=3",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V2c eta* plateau max/min over n>=40 (worst jitter)",
+      "value": 27.443337034596894,
+      "criterion": "<=3",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "V2 eta2 jitter 1e-08: floor (min over n>=40), plateau ratio 6.25",
+      "value": 4.447480123681569e-06,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2 eta2 jitter 1e-10: floor (min over n>=40), plateau ratio 11.80",
+      "value": 5.877423782663094e-07,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2 eta2 jitter 1e-12: floor (min over n>=40), plateau ratio 23.86",
+      "value": 6.960824888713191e-08,
+      "criterion": "info",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "V2a eta2 floor at jitter 1e-8 <= 3e-4",
+      "value": 4.447480123681569e-06,
+      "criterion": "<=3e-4",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V2b eta2 floor ratios 1e-8/1e-10 and 1e-10/1e-12 (min)",
+      "value": 7.567057078307855,
+      "criterion": ">=3",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V2c eta2 plateau max/min over n>=40 (worst jitter)",
+      "value": 23.8580413312649,
+      "criterion": "<=3",
+      "status": "FAIL",
+      "info": false
+    },
+    {
+      "name": "V3a exponential interior sup mean-error slope",
+      "value": -1.9975474695950544,
+      "criterion": "in [-2.3,-1.7]",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V3b exponential interior L2 slope",
+      "value": -1.998699542991601,
+      "criterion": "in [-2.3,-1.7]",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V3c exponential boundary-strip sup slope",
+      "value": -0.9722494001101449,
+      "criterion": "in [-1.3,-0.7]",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V3d exponential variance slope (n>=80)",
+      "value": -0.9879018519775253,
+      "criterion": "<=-0.95",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V4a Spearman(log KL, log r/Delta^2) over 12 pairs",
+      "value": 1.0,
+      "criterion": ">0.95",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V4b Gaussian separated-input KL non-increasing and KL_80<1e-9",
+      "value": 2.7000623958883807e-13,
+      "criterion": "non-increasing (tol 1e-11), <1e-9",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "V4b CONTROL coarse grid KL_5",
+      "value": 0.0363088308397721,
+      "criterion": ">1e-2 and >100*KL_80",
+      "status": "PASS",
+      "info": false,
+      "kl_curve": [
+        0.0363088308397721,
+        4.760138949677639e-10,
+        2.1316282072803006e-12,
+        6.927791673660977e-13,
+        2.7000623958883807e-13,
+        8.526512829121202e-14
+      ]
+    },
+    {
+      "name": "V4b exponential separated-input KL, max over N>=20",
+      "value": 8.881784197001252e-16,
+      "criterion": "<=1e-10",
+      "status": "PASS",
+      "info": false,
+      "kl_curve": [
+        8.881784197001252e-16,
+        8.881784197001252e-16,
+        8.881784197001252e-16,
+        0.0,
+        0.0,
+        -8.881784197001252e-16
+      ]
+    },
+    {
+      "name": "V4c clustered-trajectory KL_80: jitter 1e-12 / 1e-10",
+      "value": 1.0860068107284033,
+      "criterion": "in [0.5,2]",
+      "status": "PASS",
+      "info": false
+    }
+  ],
+  "v3": {
+    "ns": [
+      20,
+      40,
+      80,
+      160,
+      320,
+      640,
+      1280
+    ],
+    "int_sup": [
+      0.01777433529465111,
+      0.004479470093330606,
+      0.0011242355387137692,
+      0.00028120106488538354,
+      7.030922302031506e-05,
+      1.757789844525348e-05,
+      4.394528061779646e-06
+    ],
+    "int_L2": [
+      0.018442089705303998,
+      0.004610118320481559,
+      0.0011592900840982155,
+      0.00028939606763797365,
+      7.242871748276308e-05,
+      1.8098938319373516e-05,
+      4.525887443085801e-06
+    ],
+    "bnd_sup": [
+      0.11950557897213296,
+      0.06385559875872548,
+      0.03299846257254907,
+      0.01677260770134259,
+      0.008455368564387777,
+      0.004245042350301098,
+      0.002126873690047437
+    ],
+    "var": [
+      0.25918178672646397,
+      0.1392920321820219,
+      0.07225652294888152,
+      0.03680559191112198,
+      0.018575322066466837,
+      0.009331201602022277,
+      0.004676540771139215
+    ],
+    "slopes": {
+      "int_sup": -1.9975474695950544,
+      "int_L2": -1.998699542991601,
+      "bnd_sup": -0.9722494001101449,
+      "var": -0.9691674645202585
+    }
+  },
+  "v4a_pairs": [
+    [
+      20,
+      0.0001,
+      0.09011907936172747,
+      0.00018630652576234752
+    ],
+    [
+      20,
+      0.001,
+      0.00018718500852266118,
+      1.8687273950490635e-06
+    ],
+    [
+      20,
+      0.01,
+      1.8906659349227084e-08,
+      1.9191315203670456e-08
+    ],
+    [
+      20,
+      0.1,
+      8.260059303211165e-13,
+      1.7682522113204866e-10
+    ],
+    [
+      20,
+      1.0,
+      0.0,
+      9.339196083146817e-13
+    ],
+    [
+      40,
+      0.0001,
+      0.00595944560863515,
+      4.278799536905353e-05
+    ],
+    [
+      40,
+      0.001,
+      6.320424999373131e-06,
+      4.285460875053104e-07
+    ],
+    [
+      40,
+      0.01,
+      6.180762568419595e-10,
+      4.3587355946783646e-09
+    ],
+    [
+      40,
+      0.1,
+      1.4210854715202004e-14,
+      4.952704912852823e-11
+    ],
+    [
+      40,
+      1.0,
+      0.0,
+      4.833911049217932e-13
+    ],
+    [
+      80,
+      0.0001,
+      0.0017628011882280248,
+      2.3425705819590803e-05
+    ],
+    [
+      80,
+      0.001,
+      1.6926159407404384e-06,
+      2.34035013590983e-07
+    ],
+    [
+      80,
+      0.01,
+      1.666098370378677e-10,
+      2.3647750424515834e-09
+    ],
+    [
+      80,
+      0.1,
+      -2.3092638912203256e-14,
+      2.5413005033669827e-11
+    ],
+    [
+      80,
+      1.0,
+      0.0,
+      2.509104035652854e-13
+    ],
+    [
+      160,
+      0.0001,
+      0.0004965102749459049,
+      1.2589929099249275e-05
+    ],
+    [
+      160,
+      0.001,
+      4.531830803955472e-07,
+      1.2601031329495527e-07
+    ],
+    [
+      160,
+      0.01,
+      4.1159964325743204e-11,
+      1.2678746941219288e-09
+    ],
+    [
+      160,
+      0.1,
+      -7.105427357601002e-15,
+      1.3200551762793108e-11
+    ],
+    [
+      160,
+      1.0,
+      0.0,
+      1.2867484855405564e-13
+    ]
+  ]
+}

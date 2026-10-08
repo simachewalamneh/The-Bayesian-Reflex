@@ -1,0 +1,35 @@
+{
+  "rows": [
+    {
+      "name": "T3 v_1 not in grid (min distance > 1e-6)",
+      "value": 0.03584799999999966,
+      "criterion": ">1e-6",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 max |sample mean - analytic| / SE",
+      "value": 0.8087674466998278,
+      "criterion": "<4.5",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 max |sample cov - analytic| / SE",
+      "value": 1.2103382945363466,
+      "criterion": "<4.5",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T3 simulation failures",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    }
+  ],
+  "info": {
+    "R": 20000
+  }
+}

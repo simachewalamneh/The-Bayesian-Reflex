@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "name": "T4a nugget_sd=0.1 C4a LUT (Cholesky precompute) failures over all T",
+      "value": 0.0,
+      "criterion": "==0",
+      "status": "PASS",
+      "info": false
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate lut_inv",
+      "value": 1.0,
+      "criterion": "info: {20: 1.0, 50: 1.0, 100: 1.0, 500: 1.0, 1000: 1.0, 5000: 1.0}; median first failure 3.0",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate chol_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate chol_jit1e-8",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0, 1000: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T4a nugget_sd=0.1 [info] failure rate naive_jit0",
+      "value": 0.0,
+      "criterion": "info: {20: 0.0, 50: 0.0, 100: 0.0, 500: 0.0}; median first failure None",
+      "status": "PASS",
+      "info": true
+    }
+  ],
+  "info": {
+    "setting": "a",
+    "nugget_sd": 0.1,
+    "T_list": [
+      20,
+      50,
+      100,
+      500,
+      1000,
+      5000
+    ],
+    "T_lut": 5000,
+    "T_exact": 1000,
+    "R": 20,
+    "step_time_ms": {
+      "t91_100": 0.3909645020030439,
+      "t4991_5000": 0.32631099747959524
+    },
+    "fail_rates": {
+      "lut_chol": {
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0,
+        "1000": 0.0,
+        "5000": 0.0
+      },
+      "lut_inv": {
+        "20": 1.0,
+        "50": 1.0,
+        "100": 1.0,
+        "500": 1.0,
+        "1000": 1.0,
+        "5000": 1.0
+      },
+      "chol_jit0": {
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0,
+        "1000": 0.0
+      },
+      "chol_jit1e-8": {
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0,
+        "1000": 0.0
+      },
+      "naive_jit0": {
+        "20": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      }
+    },
+    "first_fail_median": {
+      "lut_chol": null,
+      "lut_inv": 3.0,
+      "chol_jit0": null,
+      "chol_jit1e-8": null,
+      "naive_jit0": null
+    }
+  }
+}

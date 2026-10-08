@@ -1,0 +1,22 @@
+{
+  "rows": [
+    {
+      "name": "T2c N=100 on [-30,30]: sup variance over [-2,1.1]",
+      "value": 5.211228483181785e-07,
+      "criterion": "info (prediction: both <1e-6)",
+      "status": "PASS",
+      "info": true
+    },
+    {
+      "name": "T2c N=100 on [-4,4]: sup variance over [-2,1.1]",
+      "value": 1.7719199441046385e-09,
+      "criterion": "info (prediction: both <1e-6)",
+      "status": "PASS",
+      "info": true
+    }
+  ],
+  "info": {
+    "[-30,30]": 5.211228483181785e-07,
+    "[-4,4]": 1.7719199441046385e-09
+  }
+}

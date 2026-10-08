@@ -28,7 +28,8 @@ The paper reinterprets the "Bayesian reflex" (online Bayesian learning) as a com
 | E5-B-real | Functional drift with the real FSVI + pc_infer (same data as stand-in) | frozen: PASS under v2 (original absolute-tolerance miss recorded) |
 | E6 | Uncertainty-driven action (variance sampling, Thompson regret, drift) | partial: 10/15; A5v2 passes; variance sampling does not beat random by T=100 |
 | E7 | Closed reflex loop with ablations (exact grid, stand-in, real PC-FSVI) | frozen: PASS on all three engines (reduced N for confirmations) |
-| E4b (deferred), E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
+| E4b | Look-up table principle (paper sec 5-6) | v1: 14/23 recorded; v2 diagnostics 19/21; PARTIAL with explained limitations |
+| E8 |  function space, look-up table, nonstationarity, action, full loop, ellipsoidal | planned (see `docs/experimental_plan.md`) |
 
 ### Layout
 
@@ -56,6 +57,7 @@ python experiments/e5b_functional_drift.py
 python experiments/e5b_real_pcfsvi.py     # ~1-2 min
 python experiments/e6_uncertainty_action.py   # ~2-4 min
 python experiments/e7_closed_loop.py          # ~1-3 min
+python experiments/e4b_lookup_table.py --only t3   # parts: t1 t2a t2b t2c t2e t3 t4_a t4_b t4_c1 t4_c2 t4ks, then --summary (~2 min in total)
 python experiments/e7_engines.py --only real_reduced   # engines one at a time (see script), then --summary
 ```
 

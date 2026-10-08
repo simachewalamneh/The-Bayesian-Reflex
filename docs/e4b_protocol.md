@@ -44,3 +44,13 @@ eta ~ GP(0,k), k = sf^2 exp(-(v-v')^2/(2 l^2)), sf=1, l=1 (paper: exp{-(z1-z2)'R
 1. Approve the audit corrections (theorem scope, orbit-augmented grid, 1-D) and the added T2b/T2c/T4b/T4c.
 2. Approve the predictions-versus-thresholds split in T2a and T4 (slopes for the exponential control; Gaussian only floor-limited).
 3. T5 in or out.  4. Freeze the thresholds now (no changes after seeing results).
+
+## Implementation amendments (declared BEFORE the full run; thresholds above are unchanged)
+- A1 T2b: the frozen quantity (KL for the posterior-mean trajectory inputs) is the primary pass/fail. The same KL for 10 well-separated inputs is reported as info (the trajectory inputs cluster, so C_ex is near-singular).
+- A2 "non-increasing" checks allow the floor tolerance v_{k+1} <= v_k (1+1e-3) + 1e-8.
+- A3 One-time precomputation = the Cholesky factor of A (equivalent to A^-1; used for simulation, C4a, C4b). The explicit inverse is formed for T1 and run as a variant `lut_inv` (info). Disclosure: in the smoke run (tiny sizes) the explicit-inverse variant failed within a few steps at N=100, jitter 1e-8, so the explicit inverse is not usable as written; this was seen before the full run.
+- A4 Grid nodes are cell-centred with a fixed offset of 0.0731 of a cell, so that no node coincides with v_1 for any N (N=10 cell centres would contain y_0=-2).
+- A5 Slope fits use >= 2 points above 1e-6.
+- A6 Noise sweep: sigma_eta is a standard deviation (nugget variance 1e-6 and 1e-2); the sigma_eta=0 case is setting (a).
+- A7 Compute: LUT runs to T=5000 in (a),(c); exact variants run to T=1000 (naive to 500), extendable with --tmax-exact; setting (b) runs every method to T=500 with N=500 grid points (100 time nodes x 5 state nodes), length-scales (10, 1), 24 training points, truth eta*(t,y)=0.6 sin y + 0.4 + 0.3 cos(0.2 t).
+- A8 Disclosure from development: with jitter 1e-8 the Gaussian-kernel KL plateaus (KL_80 = 2.6e-5 in a trial run) because C_ex has eigenvalues down to 1e-7, comparable to the jitter; at jitter 1e-10 / 1e-12 it was 4e-9 / 6e-13. The frozen criterion (KL_80 < 1e-6 at jitter 1e-8) is therefore expected to FAIL; the jitter sweep is added as an info diagnostic. KL uses jitter 1e-9 on both covariances in the primary calculation.
