@@ -16,7 +16,7 @@
     },
     {
       "name": "sy=0.1 lag-1 autocorr",
-      "value": -0.003717298239516033,
+      "value": -0.0037172982395160398,
       "criterion": "|v|<0.0042",
       "passed": true
     },

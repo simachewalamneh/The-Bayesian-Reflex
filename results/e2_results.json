@@ -59,6 +59,6 @@
   ],
   "diagnostics": {
     "max_rel_dvar_T100": 2.8963765780196544e-15,
-    "dmu_growth_loglog_slope_T1e5": 1.0592533339324406
+    "dmu_growth_loglog_slope_T1e5": 1.0592533339324424
   }
 }
